@@ -1,18 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    {% load static %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Lista de Carros</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'my_first_app/styles.css' %}">
 </head>
 <body>
-    <h1>lista de carros</h1> 
-    {%for car in car_list%}
-        <li>{{car.title}}</li>
-    {%endfor%}
-
-    
-
-    
+    <h1>Lista de Carros</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Modelo</th>
+                <th>Año</th>
+                <th>Precio</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for car in cars %}
+                <tr>
+                    <td>{{ car.title }}</td>
+                    <td>{{ car.model }}</td>
+                    <td>{{ car.year }}</td>
+                    <td>${{ car.price }}</td>
+                </tr>
+            {% empty %}
+                <tr>
+                    <td colspan="4">No hay carros disponibles.</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
 </body>
 </html>

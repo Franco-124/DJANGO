@@ -2,13 +2,15 @@ from django.db import models
 
 # Create your models here.
 class Car(models.Model):
-    title = models.TextField(max_length=250)
-    year = models.TextField(max_length=4 , null=True)
-    brand = models.TextField(max_length=250, null=True)
+    title = models.CharField(max_length=100)
+    model = models.CharField(max_length=100 , default="sedan")
+    year = models.IntegerField()
+    price = models.DecimalField(max_digits=10, decimal_places=2)
+
     
 
     def __str__(self):
-        return f"{self.title} - {self.year} -{self.brand}"
+        return f"{self.title} - {self.model} -{self.year} - {self.price}"
     
 
 class Publisher(models.Model):
@@ -25,6 +27,10 @@ class Author(models.Model):
     def __str__(self):
         return f"{self.name} - {self.birth_date}"
 
+class Profile(models.Model):
+    author = models.OneToOneField(Author , on_delete=models.CASCADE)
+    website = models.URLField()
+    biography = models.TextField(max_length=500)
 
 
 

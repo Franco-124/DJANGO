@@ -1,0 +1,42 @@
+/* Estilo para la lista de autos */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    margin-top: 20px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+li p {
+    margin: 5px 0;
+}
+
+strong {
+    font-size: 1.2em;
+}
+
+div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
