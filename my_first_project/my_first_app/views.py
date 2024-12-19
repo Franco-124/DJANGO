@@ -32,10 +32,6 @@ class CarListView(TemplateView):
 
 
 
-
-
-
-
 def my_test_view(request , *args, **kwargs):
     print(args)
     print(kwargs)
